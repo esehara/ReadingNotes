@@ -24,7 +24,6 @@ object MyModule {
 
    Int => Intは、Haskell的な、何の引数を取り、何の値を返す
    函数か、ということになる。
-
    */
   def formatResult(name: String, n: Int, f: Int => Int): String = {
     val msg = "The %s of %d is %d."
