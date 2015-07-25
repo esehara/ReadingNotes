@@ -41,8 +41,22 @@ object MyModule {
      この場合は、valとその値を明確にするために、わざと
      valに代入していると考えられる
      */
+    val msg = "The absolute value of %d is %d"
+    msg.format(x, abs(x))
   }
 
   def main(args: Array[String]): Unit =
     println(formatAbs(-42))
 }
+/*
+ Scalaは
+
+ $ scalac foo.scala
+
+ で、クラスにすることが可能になる。そのあと、objectに
+ インポートされているメンバーが利用できる
+
+ scala > import MyModule.abs
+ scala > abs(-42)
+
+ */
