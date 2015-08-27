@@ -1,0 +1,30 @@
+# 3.6
+
+## (1): 2実数の相乗平均をとる関数 geo_mean
+
+```ocaml
+let geo_mean x y = sqrt (x *. y);;
+```
+
+## (2): 名前、身長、体重の組を受け取って、BMI指数に従ってメッセージを返す関すbmi
+
+```ocaml
+ let esehara = ("似非原", 173.0, 60.0);;
+let bmi people = let (name, height, weight) = people in
+                 let m_height = height /. 100. in
+                 let bmi_rate = weight /. (m_height ** 2.) in
+                 name ^ "さんは" ^
+                   (if bmi_rate < 18.5 then "痩せ型"
+                    else if bmi_rate >= 18.5 && bmi_rate < 25. then "普通"
+                    else if bmi_rate >= 25.  && bmi_rate < 30. then "肥満"
+                    else "高度肥満")
+                   ^ "です";;                
+```
+
+## (3) f(sum_and_diff (x, y))が(x, y)を返すようなf ##
+
+```ocaml
+let sum_and_diff (x, y) = (x + y, x - y);;
+let f (x, y) = let f_1_x = (x + y) / 2 in
+               (f_1_x, x - f_1_x);;
+```

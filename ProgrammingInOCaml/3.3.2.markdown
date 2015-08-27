@@ -35,13 +35,13 @@ let capitalize c =
 # 練習問題 3.2 #
 
 ```ocaml
-let my_and (b1, b2) = if b1 then b2 else b1 ;;
-let my_or  (b1, b2) = if b1 then b1 else b2 ;;
+let my_and b1 b2  = if b1 then b2 else b1 ;;
+let my_or  b1 b2 = if b1 then b1 else b2 ;;
 ```
 
 # 練習問題 3.3 #
 
 ```ocaml
-let my_and (b1, b2) = not (not b1 || not b2);;
-let my_or  (b1, b2) = not (not b1 && not b2);;
+let my_and b1 b2 = not (not b1 || not b2);;
+let my_or  b1 b2 = not (not b1 && not b2);;
 ```
