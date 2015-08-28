@@ -1,0 +1,28 @@
+# 4.1
+
+関数curryは、与えられた関数をカリー化する高階関数です。
+
+```ocaml
+let curry f x y = f (x, y);;
+let average (x, y) = (x +. y) /. 2.0;;
+let curried_avg = curry average;;
+```
+
+この逆、つまり(2引数の)カリー化関数を受け取り、二つ組を受け取る関数に変換するuncurry関数を定義しなさい。
+
+```ocaml
+let uncurry f (x, y) =  f x y;;
+```
+
+# 4.2 repeat関数を使ってfibを定義しなさい
+
+```ocaml
+let rec repeat f n x =
+  if n > 0 then repeat f (n - 1) (f x)
+  else x ;;
+
+let fib n =
+  let iterfib (x, y) = (y, x + y) in
+  let (fibn, _) = repeat iterfib n (0, 1) in
+  fibn;;
+```
