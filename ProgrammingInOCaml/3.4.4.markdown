@@ -9,7 +9,7 @@ let geo_mean x y = sqrt (x *. y);;
 ## (2): 名前、身長、体重の組を受け取って、BMI指数に従ってメッセージを返す関すbmi
 
 ```ocaml
- let esehara = ("似非原", 173.0, 60.0);;
+let esehara = ("似非原", 173.0, 60.0);;
 let bmi people = let (name, height, weight) = people in
                  let m_height = height /. 100. in
                  let bmi_rate = weight /. (m_height ** 2.) in
