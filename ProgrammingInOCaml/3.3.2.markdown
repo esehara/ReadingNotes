@@ -1,0 +1,47 @@
+# 練習問題3.1 #
+
+## 1
+
+```ocaml
+let rate = 114.32
+let doller_of_yen amount = truncate (amount *. rate)
+```
+
+## 2
+
+```ocaml
+let rate = 114.32
+let yen_of_doller amount = float_of_int amount *. rate ;;
+```
+
+## 3
+
+```ocaml
+let string_doller_of_yen amount =
+    let yen = truncate (amount *. doller_to_yen_rate) in
+    string_of_float amount ^ " dollers are " ^ (string_of_int yen) ^ " yen." ;;
+```
+
+## 4
+
+```ocaml
+let capitalize c =
+  let int_char = int_of_char c in
+  let maybe_upcase = (int_char - 32) in
+  if int_char >= 97 && int_char <= 122
+    then (char_of_int maybe_upcase) else c ;;
+```
+
+# 練習問題 3.2 #
+
+```ocaml
+let my_and b1 b2  = if b1 then b2 else b1 ;;
+let my_or  b1 b2 = if b1 then b1 else b2 ;;
+```
+
+# 練習問題 3.3 #
+
+```ocaml
+let my_and b1 b2 = not (not b1 || not b2);;
+let my_or  b1 b2 = not (not b1 && not b2);;
+```
